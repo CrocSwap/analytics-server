@@ -1,0 +1,19 @@
+{
+  "chain_id": "0x1",
+  "supported_chain_ids": [
+    "0x1"
+  ],
+  "results": {
+    "value": {
+      "cache": {
+        "duration": 15,
+        "path": "./services/realtime_price/results.json"
+      },
+      "module": "common.ServicePrice",
+      "function": "get_price_for_token",
+      "params": [
+        "token_address"
+      ]
+    }
+  }
+}

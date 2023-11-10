@@ -1,0 +1,93 @@
+{
+	"id": "8c8f573e-edb1-4236-b620-d890fb2d3470",
+	"name": "Görli JG AWS EC2",
+	"values": [
+		{
+			"key": "chainId",
+			"value": "0x5",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "dai",
+			"value": "0xdc31Ee1784292379Fbb2964b3B9C4124D8F89C60",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "usdc",
+			"value": "0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "account_1",
+			"value": "0xd825D73CDD050ecbEBC0B3a8D9C5952d1F64722e",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "benwolski.eth",
+			"value": "0xe09de95d2a8a73aa4bfa6f118cd1dcb3c64910dc",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "nativeEth",
+			"value": "0x0000000000000000000000000000000000000000",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "poolIdx",
+			"value": "36000",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "cacheDomain",
+			"value": "18.246.38.171:5001",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "wolsk.eth",
+			"value": "0xa86dabFBb529a4C8186BdD52bd226aC81757E090",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "wbtc",
+			"value": "0xC04B0d3107736C32e19F1c62b2aF67BE61d63a05",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "miyuki.eth",
+			"value": "0x284C7D2c453f24d6b881f5769e6B251cA43AEc38",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "account_12",
+			"value": "0x8e8346E3D0f49BB2445A3fD247a40148c8B6e0D3",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "protocol",
+			"value": "http",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "dumpJson",
+			"value": "false",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-05-18T17:06:24.026Z",
+	"_postman_exported_using": "Postman/10.14.3"
+}

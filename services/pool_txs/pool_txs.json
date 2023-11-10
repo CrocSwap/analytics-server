@@ -1,0 +1,24 @@
+{
+  "chain_id": "0x1",
+  "supported_chain_ids": [
+    "0x1",
+    "0x5"
+  ],
+  "results": {
+    "value": {
+      "cache": {
+        "duration": 5,
+        "path": "./services/pool_txs/results.json"
+      },
+      "module": "common.ServicePoolTxs",
+      "function": "get_pool_txs_for_time_period",
+      "params": [
+        "chain_id",
+        "base",
+        "quote",
+        "pool_idx",
+        "n_days"
+      ]
+    }
+  }
+}

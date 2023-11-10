@@ -1,0 +1,18 @@
+[
+    "user",
+    "base",
+    "quote",
+    "liq",
+    "positionLiq",
+    "positionLiqBase",
+    "positionLiqQuote",
+    "claimableLiq",
+    "claimableLiqBase",
+    "claimableLiqQuote",
+    "activeLiq",
+    "activeAmbientLiq",
+    "totalLiq",
+    "totalLiqKnockout",
+    "totalLiqConcentrated",
+    "totalLiqAmbient"
+]

@@ -1,0 +1,1927 @@
+{
+	"info": {
+		"_postman_id": "7b9abf77-5207-4c88-9b92-1113ba764918",
+		"name": "Graph Cache",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27474982",
+		"_collection_link": "https://crocswap.postman.co/workspace/Team-Workspace~3be78eb0-e112-4aa3-8cda-c9a9567469d3/collection/17932672-7b9abf77-5207-4c88-9b92-1113ba764918?action=share&creator=27474982&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Leaderboard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/annotated_pool_positions?base={{nativeEth}}&quote={{usdc}}&poolIdx=36000&chainId={{chainId}}&ensResolution=true&omitEmpty=true&addValue=true&n=50&sortByAPY=true&omitKnockout=true&minPosAge=1440",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"annotated_pool_positions"
+					],
+					"query": [
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{usdc}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "36000"
+						},
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "ensResolution",
+							"value": "true"
+						},
+						{
+							"key": "omitEmpty",
+							"value": "true"
+						},
+						{
+							"key": "addValue",
+							"value": "true"
+						},
+						{
+							"key": "n",
+							"value": "50"
+						},
+						{
+							"key": "sortByAPY",
+							"value": "true"
+						},
+						{
+							"key": "omitKnockout",
+							"value": "true"
+						},
+						{
+							"key": "minPosAge",
+							"value": "1440"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chain Stats Fresh",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/chain_stats_fresh?concise=true&chainId=0x5",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"chain_stats_fresh"
+					],
+					"query": [
+						{
+							"key": "lookback",
+							"value": "10000000",
+							"disabled": true
+						},
+						{
+							"key": "concise",
+							"value": "true"
+						},
+						{
+							"key": "chainId",
+							"value": "0x5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chain Stats Cached",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/chain_stats_cached?concise=true&chainId={{chainId}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"chain_stats_cached"
+					],
+					"query": [
+						{
+							"key": "concise",
+							"value": "true"
+						},
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool Positions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_positions?base={{nativeEth}}&quote={{usdc}}&poolIdx=36000&chainId={{chainId}}&annotate=true&ensResolution=true&omitEmpty=true&addValue=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_positions"
+					],
+					"query": [
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{usdc}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "36000"
+						},
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "annotate",
+							"value": "true"
+						},
+						{
+							"key": "ensResolution",
+							"value": "true"
+						},
+						{
+							"key": "omitEmpty",
+							"value": "true"
+						},
+						{
+							"key": "addValue",
+							"value": "true"
+						},
+						{
+							"key": "n",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "addCachedAPY",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "sortByAPY",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool Liquidity Changes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_liqchanges?chainId={{chainId}}&base={{nativeEth}}&n=100&quote={{dai}}&poolIdx={{poolIdx}}&annotate=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_liqchanges"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "n",
+							"value": "100"
+						},
+						{
+							"key": "quote",
+							"value": "{{dai}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						},
+						{
+							"key": "annotate",
+							"value": "true"
+						},
+						{
+							"key": "addValue",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool Liquidity Distribution",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_liquidity_distribution?chainId={{chainId}}&poolIdx={{poolIdx}}&base={{nativeEth}}&quote={{usdc}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_liquidity_distribution"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						},
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{usdc}}"
+						},
+						{
+							"key": "concise",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool Liquidity Fee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_liquidity_fee?chainId={{chainId}}&base={{nativeEth}}&quote={{usdc}}&poolIdx={{poolIdx}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_liquidity_fee"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{usdc}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool Limit Order States",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_limit_order_states?chainId={{chainId}}&base={{nativeEth}}&quote={{usdc}}&poolIdx={{poolIdx}}&ensResolution=true&omitEmpty=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_limit_order_states"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{usdc}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						},
+						{
+							"key": "ensResolution",
+							"value": "true"
+						},
+						{
+							"key": "omitEmpty",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_list?chainId={{chainId}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_list"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool Stats Fresh",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_stats_fresh?chainId={{chainId}}&base={{nativeEth}}&quote={{usdc}}&poolIdx={{poolIdx}}&concise=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_stats_fresh"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{usdc}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						},
+						{
+							"key": "concise",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool Volume",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_volume?chainId={{chainId}}&base={{usdc}}&quote={{dai}}&poolIdx={{poolIdx}}&concise=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_volume"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "base",
+							"value": "{{usdc}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{dai}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						},
+						{
+							"key": "concise",
+							"value": "true"
+						},
+						{
+							"key": "lookback",
+							"value": "864000",
+							"disabled": true
+						},
+						{
+							"key": "token_used",
+							"value": "base",
+							"disabled": true
+						},
+						{
+							"key": "calculate_per_swap",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "simpleCalcs",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool Volume Series",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_volume_series?base={{nativeEth}}&quote={{usdc}}&poolIdx={{poolIdx}}&chainId={{chainId}}&resolution=600",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_volume_series"
+					],
+					"query": [
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{usdc}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						},
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "resolution",
+							"value": "600"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool TVL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_tvl?chainId={{chainId}}&base={{nativeEth}}&quote={{wbtc}}&poolIdx={{poolIdx}}&concise=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_tvl"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{wbtc}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						},
+						{
+							"key": "concise",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ETH/DAI - TVL",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{cacheDomain}}/pool_tvl?chainId={{chainId}}&base={{nativeEth}}&quote={{dai}}&poolIdx={{poolIdx}}",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{cacheDomain}}"
+							],
+							"path": [
+								"pool_tvl"
+							],
+							"query": [
+								{
+									"key": "chainId",
+									"value": "{{chainId}}"
+								},
+								{
+									"key": "base",
+									"value": "{{nativeEth}}"
+								},
+								{
+									"key": "quote",
+									"value": "{{dai}}"
+								},
+								{
+									"key": "poolIdx",
+									"value": "{{poolIdx}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.20.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Aug 2022 20:46:25 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"tvl\": 41654.138887904875\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Pool TVL Series",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_tvl_series?base={{nativeEth}}&quote={{usdc}}&poolIdx={{poolIdx}}&chainId={{chainId}}&resolution=600",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_tvl_series"
+					],
+					"query": [
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{usdc}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						},
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "resolution",
+							"value": "600"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool Price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_price?chainId={{chainId}}&base={{nativeEth}}&quote={{dai}}&poolIdx={{poolIdx}}&concise=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_price"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{dai}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						},
+						{
+							"key": "concise",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool Price Change",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_price_change?chainId={{chainId}}&base={{nativeEth}}&quote={{dai}}&poolIdx={{poolIdx}}&concise=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_price_change"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{dai}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						},
+						{
+							"key": "concise",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool Ambient APY Fresh",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_ambient_apy_fresh?chainId=0x5&base={{nativeEth}}&quote={{dai}}&poolIdx={{poolIdx}}&lookback=604800&errorMargin=600",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_ambient_apy_fresh"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "0x5"
+						},
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{dai}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						},
+						{
+							"key": "lookback",
+							"value": "604800"
+						},
+						{
+							"key": "errorMargin",
+							"value": "600"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool Ambient APY Cached",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_ambient_apy_cached?chainId={{chainId}}&base={{nativeEth}}&quote={{dai}}&poolIdx={{poolIdx}}&concise=true&lookback=604800",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_ambient_apy_cached"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{dai}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						},
+						{
+							"key": "concise",
+							"value": "true"
+						},
+						{
+							"key": "lookback",
+							"value": "604800"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pool Recent Changes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/pool_recent_changes?base={{nativeEth}}&quote={{usdc}}&poolIdx={{poolIdx}}&chainId={{chainId}}&n=100&ensResolution=true&annotate=true&addValue=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"pool_recent_changes"
+					],
+					"query": [
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{usdc}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						},
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "n",
+							"value": "100"
+						},
+						{
+							"key": "ensResolution",
+							"value": "true"
+						},
+						{
+							"key": "annotate",
+							"value": "true"
+						},
+						{
+							"key": "addValue",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Recent Changes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/user_recent_changes?user={{wolsk.eth}}&chainId={{chainId}}&addValue=true&annotate=true&ensResolution=true&n=100",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"user_recent_changes"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "{{wolsk.eth}}"
+						},
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "addValue",
+							"value": "true"
+						},
+						{
+							"key": "annotate",
+							"value": "true"
+						},
+						{
+							"key": "ensResolution",
+							"value": "true"
+						},
+						{
+							"key": "n",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Positions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/user_positions?chainId={{chainId}}&user={{wolsk.eth}}&annotate=true&addValue=true&omitKnockout=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"user_positions"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "user",
+							"value": "{{wolsk.eth}}"
+						},
+						{
+							"key": "annotate",
+							"value": "true"
+						},
+						{
+							"key": "addValue",
+							"value": "true"
+						},
+						{
+							"key": "omitKnockout",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Liquidity Changes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/user_liqchanges?chainId={{chainId}}&user={{benwolski.eth}}&annotate=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"user_liqchanges"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "user",
+							"value": "{{benwolski.eth}}"
+						},
+						{
+							"key": "annotate",
+							"value": "true"
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "n",
+							"value": "10",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Limit Order Changes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/user_limit_order_changes?chainId={{chainId}}&user={{wolsk.eth}}&ensResolution=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"user_limit_order_changes"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "user",
+							"value": "{{wolsk.eth}}"
+						},
+						{
+							"key": "ensResolution",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Limit Order States",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/user_limit_order_states?chainId={{chainId}}&ensResolution=true&user={{wolsk.eth}}&omitEmpty=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"user_limit_order_states"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "ensResolution",
+							"value": "true"
+						},
+						{
+							"key": "addValue",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "user",
+							"value": "{{wolsk.eth}}"
+						},
+						{
+							"key": "omitEmpty",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Deposit Balances",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/user_balances?chainId=0x5&user={{account_12}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"user_balances"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "0x5"
+						},
+						{
+							"key": "user",
+							"value": "{{account_12}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Position Stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/position_stats?addValue=true&omitAPY=true&user=0xe09de95d2a8a73aa4bfa6f118cd1dcb3c64910dc&bidTick=205120&askTick=205184&base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000&chainId=0x5&positionType=knockout&changeHistory=true&isBid=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"position_stats"
+					],
+					"query": [
+						{
+							"key": "addValue",
+							"value": "true"
+						},
+						{
+							"key": "omitAPY",
+							"value": "true"
+						},
+						{
+							"key": "addCachedAPY",
+							"value": "false",
+							"disabled": true
+						},
+						{
+							"key": "user",
+							"value": "0xe09de95d2a8a73aa4bfa6f118cd1dcb3c64910dc"
+						},
+						{
+							"key": "bidTick",
+							"value": "205120"
+						},
+						{
+							"key": "askTick",
+							"value": "205184"
+						},
+						{
+							"key": "base",
+							"value": "0x0000000000000000000000000000000000000000"
+						},
+						{
+							"key": "quote",
+							"value": "0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c"
+						},
+						{
+							"key": "poolIdx",
+							"value": "36000"
+						},
+						{
+							"key": "chainId",
+							"value": "0x5"
+						},
+						{
+							"key": "positionType",
+							"value": "knockout"
+						},
+						{
+							"key": "changeHistory",
+							"value": "true"
+						},
+						{
+							"key": "isBid",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Position Stats",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{cacheDomain}}/position_stats?chainId={{chainId}}&user={{wolsk.eth}}&base={{nativeEth}}&quote={{usdc}}&poolIdx={{poolIdx}}&bidTick=-75008&addValue=true&positionType=concentrated",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{cacheDomain}}"
+							],
+							"path": [
+								"position_stats"
+							],
+							"query": [
+								{
+									"key": "chainId",
+									"value": "{{chainId}}"
+								},
+								{
+									"key": "user",
+									"value": "{{wolsk.eth}}"
+								},
+								{
+									"key": "base",
+									"value": "{{nativeEth}}"
+								},
+								{
+									"key": "quote",
+									"value": "{{usdc}}"
+								},
+								{
+									"key": "poolIdx",
+									"value": "{{poolIdx}}"
+								},
+								{
+									"key": "bidTick",
+									"value": "-75008"
+								},
+								{
+									"key": "addValue",
+									"value": "true"
+								},
+								{
+									"key": "positionType",
+									"value": "concentrated"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.20.1"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 30 Sep 2022 18:49:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"user\": \"0xa86dabfbb529a4c8186bdd52bd226ac81757e090\",\n        \"base\": \"0x0000000000000000000000000000000000000000\",\n        \"quote\": \"0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c\",\n        \"poolIdx\": 36000,\n        \"bidTick\": -75008,\n        \"askTick\": 0,\n        \"isBid\": false,\n        \"omitAPY\": false,\n        \"ensResolution\": false,\n        \"addCachedAPY\": false,\n        \"verbose\": false,\n        \"network\": \"goerli\",\n        \"addValue\": \"true\",\n        \"positionType\": \"concentrated\",\n        \"annotate\": true,\n        \"poolHash\": \"0x1858be13e1008d752afb6c4c2ed3f8002c18531af00840a4267c3b62fbaeccdc\",\n        \"baseSymbol\": \"ETH\",\n        \"baseDecimals\": 18,\n        \"quoteSymbol\": \"USDC\",\n        \"quoteDecimals\": 6,\n        \"positionId\": \"goerli_a86dabfbb529a4c8186bdd52bd226ac81757e090_1858be13e1008d752afb6c4c2ed3f8002c18531af00840a4267c3b62fbaeccdc_concentrated_-75008_0_0\",\n        \"positionStorageSlot\": \"0xb1a630327cecc34b2afb62cbea70a6b9572e64af6a32ad8ce7a7a185ad268fe5\",\n        \"bidTickPrice\": 0.0005528493675266368,\n        \"bidTickInvPrice\": 1808.8109686619457,\n        \"bidTickPriceDecimalCorrected\": 5.528493675266368e-16,\n        \"bidTickInvPriceDecimalCorrected\": 1808810968661945.8,\n        \"askTickPrice\": 1,\n        \"askTickInvPrice\": 1,\n        \"askTickPriceDecimalCorrected\": 1e-12,\n        \"askTickInvPriceDecimalCorrected\": 1000000000000,\n        \"cacheTime\": 1664563740,\n        \"cacheAge\": 9,\n        \"positionLiq\": \"0\",\n        \"positionLiqBase\": \"0\",\n        \"positionLiqBaseDecimalCorrected\": 0,\n        \"positionLiqQuote\": \"0\",\n        \"positionLiqQuoteDecimalCorrected\": 0,\n        \"feesLiq\": \"0\",\n        \"feesLiqBase\": \"0\",\n        \"feesLiqBaseDecimalCorrected\": 0,\n        \"feesLiqQuote\": \"0\",\n        \"feesLiqQuoteDecimalCorrected\": 0,\n        \"latestUpdateBlock\": 7687929,\n        \"latestUpdateTime\": 1664563740,\n        \"apy\": 0,\n        \"apyWeightedPrincipal\": 0,\n        \"apyTime\": 0,\n        \"apyFees\": 0,\n        \"basePrice\": 1366.8986494877897,\n        \"quotePrice\": 1,\n        \"positionLiqBaseUSD\": 0,\n        \"positionLiqQuoteUSD\": 0,\n        \"positionLiqTotalUSD\": 0,\n        \"feesLiqBaseUSD\": 0,\n        \"feesLiqQuoteUSD\": 0,\n        \"feesLiqTotalUSD\": 0,\n        \"totalValueUSD\": 0,\n        \"chainId\": \"0x5\"\n    }\n}"
+				},
+				{
+					"name": "Position Stats",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{cacheDomain}}/position_stats?chainId={{chainId}}&user={{wolsk.eth}}&base={{nativeEth}}&quote={{usdc}}&poolIdx={{poolIdx}}&bidTick=204288&askTick=204288&addValue=true&positionType=knockout&isBid=true&omitAPY=false&ensResolution=true",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{cacheDomain}}"
+							],
+							"path": [
+								"position_stats"
+							],
+							"query": [
+								{
+									"key": "chainId",
+									"value": "{{chainId}}"
+								},
+								{
+									"key": "user",
+									"value": "{{wolsk.eth}}"
+								},
+								{
+									"key": "base",
+									"value": "{{nativeEth}}"
+								},
+								{
+									"key": "quote",
+									"value": "{{usdc}}"
+								},
+								{
+									"key": "poolIdx",
+									"value": "{{poolIdx}}"
+								},
+								{
+									"key": "bidTick",
+									"value": "204288"
+								},
+								{
+									"key": "askTick",
+									"value": "204288"
+								},
+								{
+									"key": "addValue",
+									"value": "true"
+								},
+								{
+									"key": "positionType",
+									"value": "knockout"
+								},
+								{
+									"key": "isBid",
+									"value": "true"
+								},
+								{
+									"key": "omitAPY",
+									"value": "false"
+								},
+								{
+									"key": "ensResolution",
+									"value": "true"
+								},
+								{
+									"key": "addCachedAPY",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.20.1"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 30 Sep 2022 18:52:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"user\": \"0xa86dabfbb529a4c8186bdd52bd226ac81757e090\",\n        \"base\": \"0x0000000000000000000000000000000000000000\",\n        \"quote\": \"0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c\",\n        \"poolIdx\": 36000,\n        \"bidTick\": 204288,\n        \"askTick\": 204288,\n        \"isBid\": true,\n        \"omitAPY\": false,\n        \"ensResolution\": \"wolsk.eth\",\n        \"addCachedAPY\": false,\n        \"verbose\": false,\n        \"network\": \"goerli\",\n        \"addValue\": \"true\",\n        \"positionType\": \"knockout\",\n        \"annotate\": true,\n        \"poolHash\": \"0x1858be13e1008d752afb6c4c2ed3f8002c18531af00840a4267c3b62fbaeccdc\",\n        \"baseSymbol\": \"ETH\",\n        \"baseDecimals\": 18,\n        \"quoteSymbol\": \"USDC\",\n        \"quoteDecimals\": 6,\n        \"positionId\": \"goerli_a86dabfbb529a4c8186bdd52bd226ac81757e090_1858be13e1008d752afb6c4c2ed3f8002c18531af00840a4267c3b62fbaeccdc_knockout_204288_204288_1\",\n        \"pivotStorageSlot\": \"0x0ea3ec82e9b2a8d01538c49f32212f31bd46d76f9e76f36c70f365415a9c237a\",\n        \"limitOrderIdentifier\": \"0xa86dabfbb529a4c8186bdd52bd226ac81757e0900ea3ec82e9b2a8d01538c49f32212f31bd46d76f9e76f36c70f365415a9c237a\",\n        \"merkleStorageSlot\": \"0x99f670312120cb4e8bd4db2603a6f212d000119957f5083026bf79b3e48ef60c\",\n        \"bidTickPrice\": 744168933.4329104,\n        \"bidTickInvPrice\": 1.3437809011818332e-9,\n        \"bidTickPriceDecimalCorrected\": 0.0007441689334329104,\n        \"bidTickInvPriceDecimalCorrected\": 1343.7809011818333,\n        \"askTickPrice\": 744168933.4329104,\n        \"askTickInvPrice\": 1.3437809011818332e-9,\n        \"askTickPriceDecimalCorrected\": 0.0007441689334329104,\n        \"askTickInvPriceDecimalCorrected\": 1343.7809011818333,\n        \"cacheTime\": 1664563944,\n        \"cacheAge\": 4,\n        \"positionLiq\": \"0\",\n        \"positionLiqBase\": \"0\",\n        \"positionLiqBaseDecimalCorrected\": 0,\n        \"positionLiqQuote\": \"0\",\n        \"positionLiqQuoteDecimalCorrected\": 0,\n        \"feesLiq\": null,\n        \"feesLiqBase\": null,\n        \"feesLiqBaseDecimalCorrected\": null,\n        \"feesLiqQuote\": null,\n        \"feesLiqQuoteDecimalCorrected\": null,\n        \"latestUpdateBlock\": 7687943,\n        \"latestUpdateTime\": 1664563944,\n        \"apy\": null,\n        \"apyWeightedPrincipal\": null,\n        \"apyTime\": null,\n        \"apyFees\": null,\n        \"basePrice\": 1366.8986494877897,\n        \"quotePrice\": 1,\n        \"positionLiqBaseUSD\": 0,\n        \"positionLiqQuoteUSD\": 0,\n        \"positionLiqTotalUSD\": 0,\n        \"totalValueUSD\": 0,\n        \"ensResolutionAge\": 96405,\n        \"chainId\": \"0x5\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Position APY",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/position_apy?chainId=0x5&user={{benwolski.eth}}&base={{usdc}}&quote={{dai}}&poolIdx=36000&concise=true&positionType=ambient",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"position_apy"
+					],
+					"query": [
+						{
+							"key": "chainId",
+							"value": "0x5"
+						},
+						{
+							"key": "user",
+							"value": "{{benwolski.eth}}"
+						},
+						{
+							"key": "base",
+							"value": "{{usdc}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{dai}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "36000"
+						},
+						{
+							"key": "concise",
+							"value": "true"
+						},
+						{
+							"key": "positionType",
+							"value": "ambient"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candles (Mainnet - 1 minute)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/candle_series?base={{nativeEth}}&quote=0x6B175474E89094C44Da98b954EedeAC495271d0F&poolIdx=36000&period=300&chainId=0x1&dex=all&page=0&n=100&concise=true&time=1664953396",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"candle_series"
+					],
+					"query": [
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "0x6B175474E89094C44Da98b954EedeAC495271d0F"
+						},
+						{
+							"key": "poolIdx",
+							"value": "36000"
+						},
+						{
+							"key": "period",
+							"value": "300"
+						},
+						{
+							"key": "chainId",
+							"value": "0x1"
+						},
+						{
+							"key": "dex",
+							"value": "all"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "n",
+							"value": "100"
+						},
+						{
+							"key": "poolStats",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "concise",
+							"value": "true"
+						},
+						{
+							"key": "time",
+							"value": "1664953396"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candles (1 minute)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/candle_series?base={{usdc}}&quote={{dai}}&poolIdx=36000&period=60&n=200&page=0&chainId={{chainId}}&dex=all",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"candle_series"
+					],
+					"query": [
+						{
+							"key": "base",
+							"value": "{{usdc}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{dai}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "36000"
+						},
+						{
+							"key": "period",
+							"value": "60"
+						},
+						{
+							"key": "time",
+							"value": "1664853660",
+							"disabled": true
+						},
+						{
+							"key": "n",
+							"value": "200"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "dex",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candles (5 minute)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/candle_series?base={{nativeEth}}&quote={{dai}}&poolIdx=36000&page=0&n=100&period=300&chainId={{chainId}}&dex=all&poolStats=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"candle_series"
+					],
+					"query": [
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{dai}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "36000"
+						},
+						{
+							"key": "time",
+							"value": "1657830000",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "n",
+							"value": "100"
+						},
+						{
+							"key": "period",
+							"value": "300"
+						},
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "dex",
+							"value": "all"
+						},
+						{
+							"key": "poolStats",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candles (1 hour)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/candle_series?base={{nativeEth}}&quote=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&poolIdx={{poolIdx}}&period=3600&n=200&chainId=0x1&dex=all&concise=true",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"candle_series"
+					],
+					"query": [
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+						},
+						{
+							"key": "poolIdx",
+							"value": "{{poolIdx}}"
+						},
+						{
+							"key": "period",
+							"value": "3600"
+						},
+						{
+							"key": "time",
+							"value": "1656979200",
+							"disabled": true
+						},
+						{
+							"key": "n",
+							"value": "200"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "chainId",
+							"value": "0x1"
+						},
+						{
+							"key": "dex",
+							"value": "all"
+						},
+						{
+							"key": "concise",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candles (4 hours)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/candle_series?base={{nativeEth}}&quote={{dai}}&poolIdx=36000&period=14400&n=10&chainId={{chainId}}&dex=all",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"candle_series"
+					],
+					"query": [
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{dai}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "36000"
+						},
+						{
+							"key": "period",
+							"value": "14400"
+						},
+						{
+							"key": "time",
+							"value": "1656979200",
+							"disabled": true
+						},
+						{
+							"key": "n",
+							"value": "10"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "dex",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candles (1 day)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{cacheDomain}}/candle_series?base={{nativeEth}}&quote={{usdc}}&poolIdx=36000&period=86400&n=100&chainId={{chainId}}&dex=all&concise=true&poolStats=true&poolStatsChainIdOverride=0x5&poolStatsBaseOverride=0x0000000000000000000000000000000000000000&poolStatsQuoteOverride=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolStatsPoolIdxOverride={{poolIdx}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{cacheDomain}}"
+					],
+					"path": [
+						"candle_series"
+					],
+					"query": [
+						{
+							"key": "base",
+							"value": "{{nativeEth}}"
+						},
+						{
+							"key": "quote",
+							"value": "{{usdc}}"
+						},
+						{
+							"key": "poolIdx",
+							"value": "36000"
+						},
+						{
+							"key": "period",
+							"value": "86400"
+						},
+						{
+							"key": "time",
+							"value": "1656979200",
+							"disabled": true
+						},
+						{
+							"key": "n",
+							"value": "100"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "chainId",
+							"value": "{{chainId}}"
+						},
+						{
+							"key": "dex",
+							"value": "all"
+						},
+						{
+							"key": "concise",
+							"value": "true"
+						},
+						{
+							"key": "poolStats",
+							"value": "true"
+						},
+						{
+							"key": "poolStatsChainIdOverride",
+							"value": "0x5"
+						},
+						{
+							"key": "poolStatsBaseOverride",
+							"value": "0x0000000000000000000000000000000000000000"
+						},
+						{
+							"key": "poolStatsQuoteOverride",
+							"value": "0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c"
+						},
+						{
+							"key": "poolStatsPoolIdxOverride",
+							"value": "{{poolIdx}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"",
+					"",
+					"// NOTE: Below will save all the collections responses if you run locally this tool: https://github.com/sivcan/ResponseToFile-Postman",
+					"// The opts for the server, also includes the data to be written to file, dump this by setting dumpJson to 'true'",
+					"if (pm.environment.get('dumpJson') === 'true') {",
+					"    let opts = {",
+					"        requestName: request.name || request.url,",
+					"        fileExtension: 'json',",
+					"        mode: 'writeFile', ",
+					"        uniqueIdentifier: false,",
+					"        responseData: pm.response.text()",
+					"    };",
+					"    pm.sendRequest({",
+					"        url: 'http://localhost:3000/write',",
+					"        method: 'POST',",
+					"        header: 'Content-Type:application/json',",
+					"        body: {",
+					"            mode: 'raw',",
+					"            raw: JSON.stringify(opts)",
+					"        }",
+					"    }, function (err, res) {",
+					"        console.log(res);",
+					"    });",
+					"}",
+					""
+				]
+			}
+		}
+	]
+}

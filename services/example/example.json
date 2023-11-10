@@ -1,0 +1,21 @@
+{
+    "chain_id": "0x1",
+    "supported_chain_ids": [
+        "0x1",
+        "0x5"
+    ],
+    "results": {
+        "value": {
+            "cache": {
+                "duration": 1,
+                "path": "./services/example/results.json"
+            },
+            "module": "common.ServiceExample",
+            "function": "serviceFunc",
+            "params": [
+                "arg1",
+                "arg2"
+            ]
+        }
+    }
+}

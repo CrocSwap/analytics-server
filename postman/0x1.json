@@ -1,0 +1,171 @@
+{
+	"id": "480360ec-fedc-42ab-a4c5-8ad6edce7a5f",
+	"name": "Görli on ambindexer.net",
+	"values": [
+		{
+			"key": "chainId",
+			"value": "0x1",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "dai",
+			"value": "0x6b175474e89094c44da98b954eedeac495271d0f",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "usdc",
+			"value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "account_1",
+			"value": "{{CHAIN_0X1_ACCOUNT_1}}",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "account_2",
+			"value": "{{CHAIN_0X1_ACCOUNT_2}}",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "nativeEth",
+			"value": "0x0000000000000000000000000000000000000000",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "poolIdx",
+			"value": "420",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "limit_1_pivot_time",
+			"value": "0",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "limit_1_is_bid",
+			"value": "false",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "limit_1_bid_tick",
+			"value": "201760",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "limit_1_ask_tick",
+			"value": "201776",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "range_1_bid_tick",
+			"value": "199664",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "range_1_ask_tick",
+			"value": "201680",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "cacheDomain",
+			"value": "ambindexer.net",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "wolsk.eth",
+			"value": "{{CHAIN_0X1_ACCOUNT_WOLKS}}",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "wbtc",
+			"value": "0xC04B0d3107736C32e19F1c62b2aF67BE61d63a05",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "miyuki.eth",
+			"value": "{{CHAIN_0X1_ACCOUNT_MIYUKI}}",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "account_12",
+			"value": "{{CHAIN_0X1_ACCOUNT_12}}",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "protocol",
+			"value": "https",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "dumpJson",
+			"value": "false",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "CG_ENDPOINT",
+			"value": "https://pro-api.coingecko.com/api/v3",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "GCGO_POOL_STATS",
+			"value": "https://ambindexer.net/gcgo/pool_stats",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "GCGO_POOL_TXS",
+			"value": "https://ambindexer.net/gcgo/pool_txs",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "CURRENCY",
+			"value": "usd",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "network_id",
+			"value": "mainnet",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "contract_version",
+			"value": "V1",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "cg_asset_platform",
+			"value": "ethereum",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-06-23T14:04:05.430Z",
+	"_postman_exported_using": "Postman/10.14.3"
+}

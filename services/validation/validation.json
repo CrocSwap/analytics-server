@@ -1,0 +1,27 @@
+{
+    "chain_id": "0x1",
+    "supported_chain_ids": [
+        "0x1",
+        "0x5"
+    ],
+    "results": {
+        "graph_staleness_check": {
+            "cache": {
+                "duration": 60,
+                "path": "./services/validation/results_graph.json"
+            },
+            "module": "common.ServiceValidateDataStaleness",
+            "function": "validate_graph_staleness",
+            "params": []
+        },
+        "missing_orders": {
+            "cache": {
+                "duration": 60,
+                "path": "./services/validation/results_missing_orders.json"
+            },
+            "module": "common.ServiceValidateMissingOrders",
+            "function": "validate_missing_orders",
+            "params": []
+        }
+    }
+}

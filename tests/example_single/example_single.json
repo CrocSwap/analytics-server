@@ -1,0 +1,19 @@
+{
+    "collection": "./postman/graphcache_go_collection.json",
+    "chain_id": "0x5",
+    "supported_chain_ids": [
+        "0x1",
+        "0x5"
+    ],
+    "outpath": "./tests/example_single/download_a",
+    "cross_validation_functions": {
+        "user_positions": {
+            "module": "common.ValidatorGCGO",
+            "class": "ValidatorUserPositions",
+            "level": "record",
+            "path": "./tests/example_single/validate_user_positions_results.json",
+            "function": "validRangePosition"
+        }
+    },
+    "resultspath": "./tests/example_single/results.json"
+}

@@ -1,0 +1,858 @@
+{
+    "info": {
+        "_postman_id": "f8f805fb-7481-411d-8919-a9a3a74ba225",
+        "name": "GCGO",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "27814015",
+        "_collection_link": "https://crocswap.postman.co/workspace/3be78eb0-e112-4aa3-8cda-c9a9567469d3/collection/17932672-f8f805fb-7481-411d-8919-a9a3a74ba225?action=share&creator=27814015&source=collection_link"
+    },
+    "item": [
+        {
+            "name": "Server Status",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            "pm.test(\"Status code is 200\", function () {",
+                            "    pm.response.to.have.status(200);",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Chain Stats",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/chain_stats?chainId=0x1&n=10",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "chain_stats"
+                    ],
+                    "query": [
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        },
+                        {
+                            "key": "n",
+                            "value": "10"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Pool List",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_list?chainId=0x1&poolIdx=420",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "pool_list"
+                    ],
+                    "query": [
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        },
+                        {
+                            "key": "poolIdx",
+                            "value": "{{poolIdx}}"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Pool Stats",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_stats?base=0x0000000000000000000000000000000000000000&quote=0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C&poolIdx=36000&chainId=0x5",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "pool_stats"
+                    ],
+                    "query": [
+                        {
+                            "key": "base",
+                            "value": "{{nativeEth}}"
+                        },
+                        {
+                            "key": "quote",
+                            "value": "{{usdc}}"
+                        },
+                        {
+                            "key": "poolIdx",
+                            "value": "{{poolIdx}}"
+                        },
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Pool Candles",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_candles?base={{uniswap_usdc}}&quote={{uniswap_weth}}&poolIdx={{poolIdx}}&period=3600&n=201&chainId=0x1",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "pool_candles"
+                    ],
+                    "query": [
+                        {
+                            "key": "base",
+                            "value": "{{nativeEth}}"
+                        },
+                        {
+                            "key": "quote",
+                            "value": "{{usdc}}"
+                        },
+                        {
+                            "key": "poolIdx",
+                            "value": "{{poolIdx}}"
+                        },
+                        {
+                            "key": "period",
+                            "value": "3600"
+                        },
+                        {
+                            "key": "n",
+                            "value": "201"
+                        },
+                        {
+                            "key": "time",
+                            "value": "1684411200",
+                            "disabled": true
+                        },
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Pool Transactions (previously Pool Recent Changes)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_txs?chainId={{chainId}}&base={{nativeEth}}&quote={{usdc}}&poolIdx={{poolIdx}}&n=10",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "pool_txs"
+                    ],
+                    "query": [
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        },
+                        {
+                            "key": "base",
+                            "value": "{{nativeEth}}"
+                        },
+                        {
+                            "key": "quote",
+                            "value": "{{usdc}}"
+                        },
+                        {
+                            "key": "poolIdx",
+                            "value": "{{poolIdx}}"
+                        },
+                        {
+                            "key": "n",
+                            "value": "10"
+                        },
+                        {
+                            "key": "time",
+                            "value": "0",
+                            "disabled": true
+                        },
+                        {
+                            "key": "period",
+                            "value": "3600",
+                            "disabled": true
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Pool Limit Orders (previously pool limit order states)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_limit_orders?base=0x0000000000000000000000000000000000000000&quote=0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48&poolIdx=420&chainId=0x1&ensResolution=true&omitEmpty=true&n=200",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "pool_limit_orders"
+                    ],
+                    "query": [
+                        {
+                            "key": "base",
+                            "value": "{{nativeEth}}"
+                        },
+                        {
+                            "key": "quote",
+                            "value": "{{usdc}}"
+                        },
+                        {
+                            "key": "poolIdx",
+                            "value": "{{poolIdx}}"
+                        },
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        },
+                        {
+                            "key": "ensResolution",
+                            "value": "true"
+                        },
+                        {
+                            "key": "omitEmpty",
+                            "value": "true"
+                        },
+                        {
+                            "key": "n",
+                            "value": "200"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Pool Positions",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_positions?base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000&chainId=0x5&annotate=true&ensResolution=true&omitEmpty=true&omitKnockout=true&addValue=true&n=50",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "pool_positions"
+                    ],
+                    "query": [
+                        {
+                            "key": "base",
+                            "value": "{{nativeEth}}"
+                        },
+                        {
+                            "key": "quote",
+                            "value": "{{usdc}}"
+                        },
+                        {
+                            "key": "poolIdx",
+                            "value": "{{poolIdx}}"
+                        },
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        },
+                        {
+                            "key": "annotate",
+                            "value": "true"
+                        },
+                        {
+                            "key": "ensResolution",
+                            "value": "true"
+                        },
+                        {
+                            "key": "omitEmpty",
+                            "value": "true"
+                        },
+                        {
+                            "key": "omitKnockout",
+                            "value": "true"
+                        },
+                        {
+                            "key": "addValue",
+                            "value": "true"
+                        },
+                        {
+                            "key": "n",
+                            "value": "50"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Pool Leaderboard",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_position_apy_leaders?base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000&chainId=0x5&ensResolution=true&omitEmpty=true&omitKnockout=true&addValue=true&sortByAPY=true&n=50&minPosAge=86400",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "pool_position_apy_leaders"
+                    ],
+                    "query": [
+                        {
+                            "key": "base",
+                            "value": "{{nativeEth}}"
+                        },
+                        {
+                            "key": "quote",
+                            "value": "{{usdc}}"
+                        },
+                        {
+                            "key": "poolIdx",
+                            "value": "{{poolIdx}}"
+                        },
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        },
+                        {
+                            "key": "ensResolution",
+                            "value": "true"
+                        },
+                        {
+                            "key": "omitEmpty",
+                            "value": "true"
+                        },
+                        {
+                            "key": "omitKnockout",
+                            "value": "true"
+                        },
+                        {
+                            "key": "addValue",
+                            "value": "true"
+                        },
+                        {
+                            "key": "sortByAPY",
+                            "value": "true"
+                        },
+                        {
+                            "key": "n",
+                            "value": "50"
+                        },
+                        {
+                            "key": "minPosAge",
+                            "value": "86400"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Pool Liquidity Curve",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_liq_curve?chainId=0x5&base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "pool_liq_curve"
+                    ],
+                    "query": [
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        },
+                        {
+                            "key": "base",
+                            "value": "{{nativeEth}}"
+                        },
+                        {
+                            "key": "quote",
+                            "value": "{{usdc}}"
+                        },
+                        {
+                            "key": "poolIdx",
+                            "value": "{{poolIdx}}"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "User Transactions (previously user limit order states)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_txs?user=0xE09de95d2A8A73aA4bFa6f118Cd1dcb3c64910Dc&chainId=0x5&annotate=true&addValue=true&simpleCalc=true&annotateMEV=false&ensResolution=true&n=100",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "user_txs"
+                    ],
+                    "query": [
+                        {
+                            "key": "user",
+                            "value": "{{account_1}}"
+                        },
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        },
+                        {
+                            "key": "annotate",
+                            "value": "true"
+                        },
+                        {
+                            "key": "addValue",
+                            "value": "true"
+                        },
+                        {
+                            "key": "simpleCalc",
+                            "value": "true"
+                        },
+                        {
+                            "key": "annotateMEV",
+                            "value": "false"
+                        },
+                        {
+                            "key": "ensResolution",
+                            "value": "true"
+                        },
+                        {
+                            "key": "n",
+                            "value": "100"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "User Limit Orders",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_limit_orders?user=0xa86dabFBb529a4C8186BdD52bd226aC81757E090&chainId=0x5&ensResolution=true",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "user_limit_orders"
+                    ],
+                    "query": [
+                        {
+                            "key": "user",
+                            "value": "{{account_2}}"
+                        },
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        },
+                        {
+                            "key": "ensResolution",
+                            "value": "true"
+                        },
+                        {
+                            "key": "omitEmpty",
+                            "value": "true",
+                            "disabled": true
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "User Pool Limit Orders",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_pool_limit_orders?user=0xa86dabFBb529a4C8186BdD52bd226aC81757E090&chainId=0x5&base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "user_pool_limit_orders"
+                    ],
+                    "query": [
+                        {
+                            "key": "user",
+                            "value": "{{account_2}}"
+                        },
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        },
+                        {
+                            "key": "base",
+                            "value": "{{nativeEth}}"
+                        },
+                        {
+                            "key": "quote",
+                            "value": "{{usdc}}"
+                        },
+                        {
+                            "key": "poolIdx",
+                            "value": "{{poolIdx}}"
+                        },
+                        {
+                            "key": "ensResolution",
+                            "value": "true",
+                            "disabled": true
+                        },
+                        {
+                            "key": "annotate",
+                            "value": "true",
+                            "disabled": true
+                        },
+                        {
+                            "key": "omitEmpty",
+                            "value": "true",
+                            "disabled": true
+                        },
+                        {
+                            "key": "omitKnockout",
+                            "value": "true",
+                            "disabled": true
+                        },
+                        {
+                            "key": "addValue",
+                            "value": "true",
+                            "disabled": true
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "User Positions",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_positions?user=0xa86dabFBb529a4C8186BdD52bd226aC81757E090&chainId=0x5&ensResolution=true&annotate=true&omitEmpty=true&omitKnockout=true&addValue=true",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "user_positions"
+                    ],
+                    "query": [
+                        {
+                            "key": "user",
+                            "value": "{{account_1}}"
+                        },
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        },
+                        {
+                            "key": "ensResolution",
+                            "value": "true"
+                        },
+                        {
+                            "key": "annotate",
+                            "value": "true"
+                        },
+                        {
+                            "key": "omitEmpty",
+                            "value": "true"
+                        },
+                        {
+                            "key": "omitKnockout",
+                            "value": "true"
+                        },
+                        {
+                            "key": "addValue",
+                            "value": "true"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "User Pool Positions",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_pool_positions?user=0xa86dabFBb529a4C8186BdD52bd226aC81757E090&chainId=0x5&base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "user_pool_positions"
+                    ],
+                    "query": [
+                        {
+                            "key": "user",
+                            "value": "{{account_1}}"
+                        },
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        },
+                        {
+                            "key": "base",
+                            "value": "{{nativeEth}}"
+                        },
+                        {
+                            "key": "quote",
+                            "value": "{{usdc}}"
+                        },
+                        {
+                            "key": "poolIdx",
+                            "value": "{{poolIdx}}"
+                        },
+                        {
+                            "key": "annotate",
+                            "value": "true",
+                            "disabled": true
+                        },
+                        {
+                            "key": "ensResolution",
+                            "value": "true",
+                            "disabled": true
+                        },
+                        {
+                            "key": "omitEmpty",
+                            "value": "true",
+                            "disabled": true
+                        },
+                        {
+                            "key": "omitKnockout",
+                            "value": "true",
+                            "disabled": true
+                        },
+                        {
+                            "key": "addValue",
+                            "value": "true",
+                            "disabled": true
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "User DEX Balance Tokens",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_balance_tokens?chainId=0x5&user=0xE09de95d2A8A73aA4bFa6f118Cd1dcb3c64910Dc",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "user_balance_tokens"
+                    ],
+                    "query": [
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        },
+                        {
+                            "key": "user",
+                            "value": "{{account_1}}"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Limit Stats",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/limit_stats?user=0xa611d8b0feee7230bb27875923d71328134d8277&bidTick=201488&askTick=201504&isBid=true&base=0x0000000000000000000000000000000000000000&quote=0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48&poolIdx=420&chainId=0x1&pivotTime=1686994427&positionType=knockout&addValue=true&omitAPY=false",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "limit_stats"
+                    ],
+                    "query": [
+                        {
+                            "key": "user",
+                            "value": "{{account_2}}"
+                        },
+                        {
+                            "key": "bidTick",
+                            "value": "{{limit_1_bid_tick}}"
+                        },
+                        {
+                            "key": "askTick",
+                            "value": "{{limit_1_ask_tick}}"
+                        },
+                        {
+                            "key": "isBid",
+                            "value": "{{limit_1_is_bid}}"
+                        },
+                        {
+                            "key": "base",
+                            "value": "{{nativeEth}}"
+                        },
+                        {
+                            "key": "quote",
+                            "value": "{{usdc}}"
+                        },
+                        {
+                            "key": "poolIdx",
+                            "value": "{{poolIdx}}"
+                        },
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        },
+                        {
+                            "key": "pivotTime",
+                            "value": "{{limit_1_pivot_time}}"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Position Stats",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/position_stats?user=0xcd33cfb6337032de97b74e1cbbfad835a9a4b9ce&bidTick=-75616&askTick=-73600&base=0x0000000000000000000000000000000000000000&quote=0x6b175474e89094c44da98b954eedeac495271d0f&poolIdx=420&chainId=0x1&positionType=concentrated&addValue=true&omitAPY=true",
+                    "protocol": "{{protocol}}",
+                    "host": [
+                        "{{cacheDomain}}"
+                    ],
+                    "path": [
+                        "gcgo",
+                        "position_stats"
+                    ],
+                    "query": [
+                        {
+                            "key": "user",
+                            "value": "{{account_1}}"
+                        },
+                        {
+                            "key": "bidTick",
+                            "value": "{{range_1_bid_tick}}"
+                        },
+                        {
+                            "key": "askTick",
+                            "value": "{{range_1_ask_tick}}"
+                        },
+                        {
+                            "key": "base",
+                            "value": "{{nativeEth}}"
+                        },
+                        {
+                            "key": "quote",
+                            "value": "{{usdc}}"
+                        },
+                        {
+                            "key": "poolIdx",
+                            "value": "{{poolIdx}}"
+                        },
+                        {
+                            "key": "chainId",
+                            "value": "{{chainId}}"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "chain_id": "0x1",
+    "supported_chain_ids": [
+        "0x1"
+    ],
+    "results": {
+        "value": {
+            "cache": {
+                "duration": 1440,
+                "path": "./services/token_metadata/results.json"
+            },
+            "module": "common.ServiceTokenMetadata",
+            "function": "get_token_metadata",
+            "params": [
+                "token_addresses"
+            ]
+        }
+    }
+}

@@ -1,0 +1,128 @@
+{
+    "collection": "./postman/graphcache_go_collection.json",
+    "chain_id": "0x5",
+    "supported_chain_ids": [
+        "0x1",
+        "0x5"
+    ],
+    "outpath": "./tests/schema/download_a",
+    "cross_validation_functions": {
+        "chain_stats": {
+            "endpoint": "chain_stats",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_chain_stats"
+        },
+        "pool_candles": {
+            "endpoint": "pool_candles",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_pool_candles"
+        },
+        "limit_stats": {
+            "endpoint": "limit_stats",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_limit_stats"
+        },
+        "pool_limit_orders": {
+            "endpoint": "pool_limit_orders",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_pool_limit_orders"
+        },
+        "pool_liq_curve": {
+            "endpoint": "pool_liq_curve",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_pool_liq_curve"
+        },
+        "pool_list": {
+            "endpoint": "pool_list",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_pool_list"
+        },
+        "pool_position_apy_leaders": {
+            "endpoint": "pool_position_apy_leaders",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_pool_position_apy_leaders"
+        },
+        "pool_positions": {
+            "endpoint": "pool_positions",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_pool_positions"
+        },
+        "pool_stats": {
+            "endpoint": "pool_stats",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_pool_stats"
+        },
+        "pool_txs": {
+            "endpoint": "pool_txs",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_pool_txs"
+        },
+        "position_stats": {
+            "endpoint": "position_stats",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_position_stats"
+        },
+        "user_balance_tokens_schema": {
+            "endpoint": "user_balance_tokens",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_user_balance_tokens"
+        },
+        "user_limit_orders": {
+            "endpoint": "user_limit_orders",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_user_limit_orders"
+        },
+        "user_pool_limit_orders": {
+            "endpoint": "user_pool_limit_orders",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_user_pool_limit_orders"
+        },
+        "user_pool_positions": {
+            "endpoint": "user_pool_positions",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_user_pool_positions"
+        },
+        "user_positions": {
+            "endpoint": "user_positions",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_user_positions"
+        },
+        "user_txs": {
+            "endpoint": "user_txs",
+            "level": "data",
+            "module": "common.SchemaValidator",
+            "function": "validate_endpoint_user_txs"
+        },
+        "user_balance_tokens_value": {
+            "endpoint": "user_balance_tokens",
+            "level": "data",
+            "module": "common.ValidatorGCGO",
+            "class": "ValidatorUserBalanceTokens",
+            "function": "validUserBalanceTokens"
+        },
+        "pool_limit_orders_duplicates": {
+            "endpoint": "pool_limit_orders",
+            "level": "data",
+            "module": "common.ValidatorGCGO",
+            "class": "ValidatorPoolLimitOrders",
+            "function": "validNoDuplicate"
+        }
+    },
+    "resultspath": "./tests/schema/results.json"
+}

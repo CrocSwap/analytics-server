@@ -1,0 +1,22 @@
+{
+    "chain_id": "0x1",
+    "supported_chain_ids": [
+        "0x1"
+    ],
+    "results": {
+        "value": {
+            "cache": {
+                "duration": 60,
+                "path": "./services/complete_pool_stats/results.json"
+            },
+            "module": "common.ServiceCompletePoolStats",
+            "function": "get_complete_pool_stats",
+            "params": [
+                "pool_id",
+                "base",
+                "quote",
+                "pool_idx"
+            ]
+        }
+    }
+}

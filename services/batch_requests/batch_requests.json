@@ -1,0 +1,20 @@
+{
+    "chain_id": "0x1",
+    "supported_chain_ids": [
+        "0x1",
+        "0x5"
+    ],
+    "results": {
+        "value": {
+            "cache": {
+                "duration": 1,
+                "path": "./services/batch_requests/results.json"
+            },
+            "module": "common.ServiceBatch",
+            "function": "service_processes_batch",
+            "params": [
+                "data"
+            ]
+        }
+    }
+}

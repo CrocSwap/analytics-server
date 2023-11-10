@@ -1,0 +1,42 @@
+{
+    "collection": "./postman/graphcache_go_collection.json",
+    "chain_id": "0x5",
+    "supported_chain_ids": [
+        "0x1",
+        "0x5"
+    ],
+    "outpath": "./tests/cv_user_positions/download_a",
+    "cross_validation_functions": {
+        "user_pool_positions": {
+            "level": "record",
+            "module": "common.ValidatorGCGO",
+            "class": "ValidatorUserPoolPositions",
+            "function": "validRangePosition"
+        },
+        "user_txs": {
+            "level": "record",
+            "module": "common.ValidatorGCGO",
+            "class": "ValidatorUserTxs",
+            "function": "validTransaction"
+        },
+        "pool_positions": {
+            "level": "record",
+            "module": "common.ValidatorGCGO",
+            "class": "ValidatorPoolPositions",
+            "function": "validRangePosition"
+        },
+        "user_balance_tokens": {
+            "level": "record",
+            "module": "common.ValidatorGCGO",
+            "class": "ValidatorUserBalanceTokens",
+            "function": "validUserBalanceTokens"
+        },
+        "position_stats": {
+            "level": "record",
+            "module": "common.ValidatorGCGO",
+            "class": "ValidatorPositionStats",
+            "function": "validRangePosition"
+        }
+    },
+    "resultspath": "./tests/cv_user_positions/results.json"
+}

@@ -1,0 +1,19 @@
+{
+    "chain_id": "0x1",
+    "supported_chain_ids": [
+        "0x1"
+    ],
+    "results": {
+        "ens_address": {
+            "cache": {
+                "duration": 604800,
+                "path": "./services/ens_address/results.json"
+            },
+            "module": "common.ServiceEnsAddress",
+            "function": "get_ens_name_from_address",
+            "params": [
+                "address"
+            ]
+        }
+    }
+}
