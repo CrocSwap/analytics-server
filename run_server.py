@@ -1,6 +1,7 @@
 import argparse
 import time
 import psutil
+import os
 
 from flask import Flask, jsonify, request
 from flask_cors import CORS
@@ -59,8 +60,9 @@ routes = {
     },
 }
 
+SERVER_ROUTE = os.getenv("SERVER_ROUTE", "/analytics")
 
-@app.route("/run", methods=["POST", "GET"])
+@app.route(SERVER_ROUTE, methods=["POST", "GET"])
 def run_service():
     try:
         # Initialize an empty dictionary
@@ -116,6 +118,9 @@ def run_service():
 
         return jsonify({"error": traceback.format_exc()}), 500
 
+@app.route("/", methods=["GET"])
+def run_alive():
+    return "ok", 200
 
 if __name__ == "__main__":
     sc = (
