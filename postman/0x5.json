@@ -21,18 +21,6 @@
 			"enabled": true
 		},
 		{
-			"key": "account_1",
-			"value": "{{CHAIN_0X5_ACCOUNT_1}}",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "account_2",
-			"value": "{{CHAIN_0X5_ACCOUNT_2}}",
-			"type": "default",
-			"enabled": true
-		},
-		{
 			"key": "nativeEth",
 			"value": "0x0000000000000000000000000000000000000000",
 			"type": "default",
@@ -95,18 +83,6 @@
 		{
 			"key": "wbtc",
 			"value": "0xC04B0d3107736C32e19F1c62b2aF67BE61d63a05",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "miyuki.eth",
-			"value": "{{CHAIN_0X5_ACCOUNT_MIYUKI}}",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "account_12",
-			"value": "{{CHAIN_0X5_ACCOUNT_12}}",
 			"type": "default",
 			"enabled": true
 		},

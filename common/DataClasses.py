@@ -63,6 +63,7 @@ class TypedConfig(dict):
         def repl(match):
             env_var_name = match.group(1)
             env_var_value = os.getenv(env_var_name)
+            print(env_var_name, env_var_value, flush=True)
             if env_var_value is None:
                 raise KeyError(f"Private variable {env_var_name} need to be set.")
             return env_var_value
@@ -101,7 +102,9 @@ class TypedConfig(dict):
         except KeyError as e:
             raise e
         except Exception as e:
-            raise Exception("Could not replace the private vars for {key} with {value}")
+            print(f"Could not replace the private vars for {key} with {value} because {e}", flush=True)
+            complete_value = ""
+        #    raise Exception("Could not replace the private vars for {key} with {value}")
 
         self._enforce_typing(key, complete_value)
 
@@ -115,7 +118,9 @@ class TypedConfig(dict):
         except KeyError as e:
             raise e
         except Exception as e:
-            raise Exception("Could not replace the private vars for {key} with {value}")
+            print(f"Could not replace the private vars for {key} with {value} because {e}", flush=True)
+            complete_value = ""
+        #    raise Exception("Could not replace the private vars for {key} with {value}")
 
         self._enforce_typing(key, complete_value)
 
@@ -384,20 +389,22 @@ class ServerConfig(TypedConfig):
 
     def __init__(self):
         self["COIN_GECKO"] = os.getenv("COIN_GECKO")
-        self["FLASK_DEBUG"] = string_to_bool(os.getenv("FLASK_DEBUG", "True"))
+        self["FLASK_DEBUG"] = string_to_bool(os.getenv("FLASK_DEBUG", "False"))
         self["FLASK_SHOW_TRACEBACK"] = string_to_bool(
             os.getenv("FLASK_SHOW_TRACEBACK", "True")
         )
+        
         self["FLASK_THREADED"] = string_to_bool(
-            os.getenv("FLASK_THREADED", "False")
+            os.getenv("FLASK_THREADED", "True")
         )
         self["FLASK_PROECESSES"] = int(
             os.getenv("FLASK_PROECESSES", "80")
         )
         self["PORT"] = int(os.getenv("PORT", 8080))
+
         self["MAX_CPU"] = int(
             os.getenv("MAX_CPU", "80")
-        )
+        )    
         self["MIN_RAM"] = int(
             os.getenv("MIN_RAM", "10")
         )

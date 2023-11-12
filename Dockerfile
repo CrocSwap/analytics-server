@@ -1,9 +1,7 @@
 # syntax=docker/dockerfile:1
 FROM python:3.9
 
-
 WORKDIR /app 
-COPY . .
 
 RUN pip3 install itsdangerous==2.0.1 && \
     apt-get update && \
@@ -20,7 +18,11 @@ RUN npm cache clean -f && \
     n stable
 RUN npm install -g newman
 
+COPY requirements.txt .
+
 RUN pip3 install -r requirements.txt
+
+COPY . .
 
 RUN chmod +x /app/container_start_server.sh 
 
