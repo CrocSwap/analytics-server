@@ -25,4 +25,4 @@ RUN pip3 install -r requirements.txt
 COPY . .
 
 RUN chmod +x /app/run_server.py 
-CMD /app/run_server.py
+ENTRYPOINT [ "/app/run_server.py" ]
