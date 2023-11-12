@@ -24,6 +24,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-RUN chmod +x /app/container_start_server.sh 
-
-CMD /app/container_start_server.sh 
+CMD python3 /app/run_server.py
