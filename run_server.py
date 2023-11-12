@@ -132,7 +132,7 @@ if __name__ == "__main__":
         metavar="port",
         type=int,
         help="the port number to listen on",
-        default=sc["PORT"],
+        default=8080,
     )
     args = parser.parse_args()
     # Setting the configuration values for memory and CPU
