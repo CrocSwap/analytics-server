@@ -60,7 +60,7 @@ routes = {
     },
 }
 
-SERVER_ROUTE = os.getenv("SERVER_ROUTE", "/analytics")
+SERVER_ROUTE = os.getenv("SERVER_ROUTE", "/analytics/run")
 
 @app.route(SERVER_ROUTE, methods=["POST", "GET"])
 def run_service():
