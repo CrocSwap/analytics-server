@@ -120,7 +120,11 @@ def run_service():
 
 @app.route("/", methods=["GET"])
 def run_alive():
-    return "ok", 200
+    return "ok\n", 200
+
+@app.route("/analytics/", methods=["GET"])
+def run_sub_alive():
+    return "ok\n", 200
 
 if __name__ == "__main__":
     sc = (
