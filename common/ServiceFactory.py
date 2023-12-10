@@ -1,6 +1,6 @@
 import importlib
 import json
-import os
+import os,threading
 from datetime import datetime, timedelta
 
 from common.DataClasses import NetworkConfig, ServerConfig, ServiceConfig
@@ -15,7 +15,8 @@ from .utils import load_json
     (Could also use an Interface. The deciding factor between Interface and Abstract class will likely be 
     the amount of code in common between all children of CacheDatabase.)
 """
-
+# Global dictionary to keep track of locks for different function calls
+function_locks = {}
 
 class CacheDatabase:
     # TODO: Choose between AbstractClass and Interface, as requirements become clear
@@ -81,9 +82,6 @@ class SimpleFileCache(CacheDatabase):
                                 os.path.join(os.path.dirname(resultspath), filename),
                                 "r",
                             ) as f:
-                                ## TODO: I hate this nesting and structure that evolved. Will leave for now.
-                                ## Still hate it. Still leaving it.
-                                ## It is almost time.
                                 resp = json.load(f)
                                 return (True, resp)
                     except ValueError:
@@ -94,7 +92,6 @@ class SimpleFileCache(CacheDatabase):
     """
         Cache a result
     """
-
     @classmethod
     def save(cls, args, kwargs, cache_config, resp):
         cache_duration = cache_config.get("duration", 0)
@@ -178,7 +175,6 @@ ServiceFactory - A service Factory
 - Single point that can be leveraged to expand / structure job running
 
 """
-
 
 class ServiceFactory:
     instances = None
@@ -291,35 +287,34 @@ class ServiceFactory:
     """
     take the args, and generate a unique hash string
     """
-
     @staticmethod
     def hash_args(args: dict):
         return ServiceBase.hash_args(args)
 
+    
     """
         Private. Do not invoke. Internal to ServiceFactory. "Invoke_*" methods to invoke. 
     """
-
     def _do_cached_invoke(
         func, args: list, kwargs: dict, cache_config: dict, cache_method=None
     ):
-        # Optional method to inject a custom caching system. This will allow for all kinds of data logging in the future.
         if cache_method == None:
+            cache_method = SimpleFileCache
             CacheMethod = SimpleFileCache
             assert issubclass(CacheMethod, CacheDatabase)
-
-        (is_from_cached, result) = CacheMethod.load(args, kwargs, cache_config)
-
-        if not is_from_cached:
-            result = func(*args, **kwargs)
-            CacheMethod.save(args, kwargs, cache_config, result)
-
+        (is_cached, result) = CacheMethod.load(args, kwargs, cache_config)
+        
+        if is_cached:
+            return result
+                        
+        result = func(*args, **kwargs)
+        CacheMethod.save(args, kwargs, cache_config, result)
         return result
+    
 
     """
         Private. Do not invoke. Internal to ServiceFactory. "Invoke_*" methods to invoke. 
     """
-
     @staticmethod
     def _create_or_lookup(module_config: dict, config: dict, network: dict):
         # Load from Cache
@@ -379,7 +374,7 @@ class ServiceFactory:
         params = {
             param: kwargs.get(param) for param in function_config.get("params", [])
         }
-
+        
         return ServiceFactory._do_cached_invoke(
             func, args=[], kwargs=params, cache_config=function_config["cache"]
         )

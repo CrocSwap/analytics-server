@@ -1,0 +1,1 @@
+docker exec -it audit_process bash

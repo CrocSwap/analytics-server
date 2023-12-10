@@ -1,7 +1,6 @@
 import argparse
 import time
 import psutil
-import os
 
 from flask import Flask, jsonify, request
 from flask_cors import CORS
@@ -13,8 +12,13 @@ from exceptions.ExceptionBase import (
     handle_unexpected_error,
 )
 from exceptions.MissingParameterException import MissingParameterException
+from run_data_validation import run as run_data_validation
+from run_record_validation import run as run_record_validation
 from run_service import run as run_service
-
+import logging
+# Set log level to suppress HTTP request logs
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.WARNING)
 
 def system_resources_available(min_free_memory_percentage=10, max_cpu_percentage=80):
     virtual_memory = psutil.virtual_memory()
@@ -54,15 +58,22 @@ app.register_error_handler(ExceptionBase, handle_exception_base)
 app.register_error_handler(Exception, handle_unexpected_error)
 
 routes = {
+    "run_record_validation": {
+        "function": run_record_validation,
+        "arguments": ["env", "config_path", "endpoint", "include_data"],
+    },
+    "run_data_validation": {
+        "function": run_data_validation,
+        "arguments": ["env", "config_path", "include_data"],
+    },
     "run": {
         "function": run_service,
         "arguments": ["env", "config_path", "include_data"],
     },
 }
 
-SERVER_ROUTE = os.getenv("SERVER_ROUTE", "/analytics/run")
 
-@app.route(SERVER_ROUTE, methods=["POST", "GET"])
+@app.route("/run", methods=["POST", "GET"])
 def run_service():
     try:
         # Initialize an empty dictionary
@@ -111,20 +122,13 @@ def run_service():
         # Add in any undeclared args, as they may be needed by a service class (analytics)
         for arg_name, arg_val in all_args.items():
             args_kw[arg_name] = arg_val
-        # return jsonify([args_positional,args_kw])
+
         return jsonify(route["function"](*args_positional, args_kw)), 200
     except Exception as e:
         import traceback
 
         return jsonify({"error": traceback.format_exc()}), 500
 
-@app.route("/", methods=["GET"])
-def run_alive():
-    return "ok\n", 200
-
-@app.route("/analytics/", methods=["GET"])
-def run_sub_alive():
-    return "ok\n", 200
 
 if __name__ == "__main__":
     sc = (
@@ -136,7 +140,7 @@ if __name__ == "__main__":
         metavar="port",
         type=int,
         help="the port number to listen on",
-        default=8080,
+        default=sc["PORT"],
     )
     args = parser.parse_args()
     # Setting the configuration values for memory and CPU

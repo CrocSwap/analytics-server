@@ -3,7 +3,7 @@
     "network_name": "goerli",
     "rpcs": {
       "infura": [
-        "{{RPC_GOERLI}}"
+        "{{GOERLI_INFURA_KEY}}"
       ]
     },
     "subgraph": "https://api.thegraph.com/subgraphs/name/crocswap/croc-testnet",
@@ -19,7 +19,7 @@
     "network_name": "mainnet",
     "rpcs": {
       "infura": [
-        "{{RPC_MAINNET}}"
+        "{{MAINNET_INFURA_KEY}}"
       ]
     },
     "subgraph": "https://api.thegraph.com/subgraphs/name/a0910841082130913312/crocmainnettest3",
@@ -36,6 +36,26 @@
     "network_name": "arbitrum-goerli",
     "rpcs": {
       "alchemy": [
+        "{{ARBITRUM_INFURA_KEY}}",
+        "{{ARBITRUM_INFURA_KEY_1}}",
+        "{{ARBITRUM_INFURA_KEY_2}}",
+        "{{ARBITRUM_INFURA_KEY_3}}",
+        "{{ARBITRUM_INFURA_KEY_4}}",
+        "{{ARBITRUM_INFURA_KEY_5}}",
+        "{{ARBITRUM_INFURA_KEY_6}}",
+        "{{ARBITRUM_INFURA_KEY_7}}",
+        "{{ARBITRUM_INFURA_KEY_8}}",
+        "{{ARBITRUM_INFURA_KEY_9}}",
+        "{{ARBITRUM_INFURA_KEY_10}}",
+        "{{ARBITRUM_INFURA_KEY_11}}",
+        "{{ARBITRUM_INFURA_KEY_12}}",
+        "{{ARBITRUM_INFURA_KEY_13}}",
+        "{{ARBITRUM_INFURA_KEY_14}}",
+        "{{ARBITRUM_INFURA_KEY_15}}",
+        "{{ARBITRUM_INFURA_KEY_16}}",
+        "{{ARBITRUM_INFURA_KEY_17}}",
+        "{{ARBITRUM_INFURA_KEY_18}}",
+        "{{ARBITRUM_INFURA_KEY_19}}"
       ]
     },
     "subgraph": "https://api.thegraph.com/subgraphs/name/a0910841082130913312/crocarbitrumgoerli4",
