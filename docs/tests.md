@@ -1,34 +1,39 @@
 # Testing the server
 
-## Running Unit test for Server
-We have unit tests in run_test.py. The purpose of this unit tests is to make sure that we didn't break any code when we made any changes. The unit test currently only checks if the code successfuly run. It doesn't check the accuracy fo the results. 
-The unit tests currently checks:
-1. The CLI command to run the analytics and validation server
-2. The API endpoints that run the analytics and validation server. We check for all 4 environments (Docker, Production, Staging and Local)
-3. The server performance via Locust Load Test. We check the performance for all 4 environments
+## Purpose
+The primary purpose of the script is to run the server in a variety of test scenarios (Basic, Load), across various interface channels (Python, CLI, LocalAPI, StagingAPI). This CLI tool allows for the user to easily move up and down the testing interface channels, while investigating either basic operations or load testing. IMPORTANT: The unit test currently only checks if the endpoint returns valid json. These tests do not check the accuracy fo the results.
 
-To run the tests:
-Run `python3 run_test.py` to run the unit tests
+# Getting Started
 
-## Load testing the server
-The run_load_test.py script is used to stress test the analytics services. The testing is performed using Locust, a powerful open-source load testing tool that allows you to define user behavior with Python code.
-To start the load testing:
-1. Start locust by running `locust -f run_load_test.py --class-picker`
-2. Once Locust is running, you can access its web interface at: http://localhost:8089
-3. In the Locust web UI, you'll have the option to configure the number of users to simulate, the spawn rate, the host to attack and the API to test. 
-- UserClasses: The API endpoint to test
-- Number of Users: The total number of simulated users to spawn.
-- Spawn Rate: The rate at which to spawn the users (users per second).
-- Host: The target host for the testing (e.g., http://localhost:8000). If no host is given, the code will run against local by default.
-4. Click the "Start Swarming" button to initiate the test.
+## Prerequisites
+- Python installed on your system.
+- Basic understanding of Python's unittest framework.
 
+## Usage
+The script is executed from the command line with specific arguments to define the command and the test case to be run.
 
-### Metrics Provided by Locust
-Locust provides real-time statistics on the web UI, including:
-- RPS (Requests Per Second): The number of requests made per second.
-- Average Response Time: The average response time for requests.
-- Min/Max Response Time: The minimum and maximum response times.
-- Number of Failures: The number of failed requests.
-- Users: The current number of active simulated users.
-You can also download the statistics as a CSV file for further analysis.
+# Command-Line Arguments
+1. --command: Specifies the command configuration to use. Options include:
+  1. CLICommand: Uses a command line tool for testing.
+  1. StageAPI: Uses a hardcoded staging server for testing.
+  1. LocalAPI: Starts and uses a local API for testing.
+  1. Python: Uses native Python imports for testing. This is the default option.
+2. --test: Specifies the test case to execute. Options include:
+  1. BasicTest: Runs a basic set of 4 commands to validate operation.
+  1. LoadTest: Executes an aggressive locust unit test. This option may lead to failures and crashes depending on the configuration of LoadTest. Use with caution.
 
+## Running
+```
+python script_name.py --command [COMMAND_OPTION] --test [TEST_OPTION]
+```
+Replace [COMMAND_OPTION] with one of the command options (CLICommand, StageAPI, LocalAPI, Python) and [TEST_OPTION] with a test option (BasicTest, LoadTest).
+
+## Examples
+Execute a Load Test against the python class import
+```
+python run_test.py --command Python --test LoadTest 
+```
+Execute a Basic Test against the StagingAPI
+```
+python run_test.py --command StageAPI --test BasicTest
+```

@@ -1,23 +1,37 @@
-# Postman Audit and Testing Tools
-These tools provide a systematic set of scripts to cross validate CrocSwap. This set includes:
-- CLI tools, Command line tools used to generate validation reports
-- HTTP Server, which sits on port 5000, and answers validation queries
-- Docker-http server, a complete Docker deployment of the system
-- Python , access and analyze validity within python
-
-# Audience
-The core intended audience of this readme is developers who want to understand and debug validators, including deploying their own validator API. If you want to use the validation engine that is already deployed, please consult the relevant usage document for more information. These guides are sorted in order of accessiblity, where Postman is the easiest method, and python is the most advanced method.
-
-1. Postman Usage - You want to know if the system is online
-2. Docker Usage - You want to deploy your own validator
-3. API Usage - You want to run your API manually
-4. CLI usage - You want to use the tool locally, on terminal, or in another application
-5. Python usage - You want to inclide results in an app
+# Analytics Server
+These tools provide a method to submit data queries to the ambient network. This code base can be imported into python, run as a CLI, hosted as a flask API, or a docker container. 
 
 
-The remainder of this document explains, first, how the system is installed locally, and second, how the system is constructed. The audience is a developer who is responsible for maintaining the system.
+# Install
+First, you must set up a `.env` and a `./docker/.env`  according to [`./docker/example.env`](./docker/example.env) 
+## CLI Quickstart
+To get going with this project, on the command line, you can quickly run these commands to get the cli running. First, you must set up a .env and a ./build/.env according to 
+```
+pip3 install -r requirements.txt
+python3 run_service.py --config example --arg1 EXAMPLE --arg2 EXAMPLE2 --include_data=1
+```
+Please check out the many command examples in [`docs/examples.md`](./docs/examples.md) for more information.
 
+
+## LocalAPI Quickstart
+You may want to run this as an api. The steps are similar
+```
+pip3 install -r requirements.txt
+python3 run_server.py
+```
+Please check out the many command examples in [`docs/examples.md`](./docs/examples.md) for more information.
+
+## Docker Quickstart
+You may want to run this in a container.
+```
+./docker/build.sh
+./docker/run.sh
+```
+Please check out the detailed docker instructions [`docker/readme.md`](./docker/readme.md) for more information.
+
+Please check out the many command examples in [`docs/examples.md`](./docs/examples.md) for more information.
 # Setup and Deployment Process
+
 Refer to [`docs/setup.md`](./docs/setup.md) for more information
 
 # Testing the server
