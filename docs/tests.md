@@ -29,11 +29,15 @@ python script_name.py --command [COMMAND_OPTION] --test [TEST_OPTION]
 Replace [COMMAND_OPTION] with one of the command options (CLICommand, StageAPI, LocalAPI, Python) and [TEST_OPTION] with a test option (BasicTest, LoadTest).
 
 ## Examples
+Execute a single Basic Test against the python class import
+```
+python3 run_test.py --command Python --test BasicTest 
+```
+Execute a Basic Test against a locally running dockerized API server
+```
+python3 run_test.py --command LocalRunningAPICommand --test BasicTest 
+```
 Execute a Load Test against the python class import
 ```
 python run_test.py --command Python --test LoadTest 
-```
-Execute a Basic Test against the StagingAPI
-```
-python run_test.py --command StageAPI --test BasicTest
 ```
