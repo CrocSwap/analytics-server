@@ -12,8 +12,6 @@ from exceptions.ExceptionBase import (
     handle_unexpected_error,
 )
 from exceptions.MissingParameterException import MissingParameterException
-from run_data_validation import run as run_data_validation
-from run_record_validation import run as run_record_validation
 from run_service import run as run_service
 import logging
 # Set log level to suppress HTTP request logs
@@ -34,7 +32,7 @@ def system_resources_available(min_free_memory_percentage=10, max_cpu_percentage
 app = Flask(__name__)
 CORS(
     app, origins="*"
-)  # In the future we can pull CORS settings from the ServerConfig as we see fit
+)  
 
 
 @app.before_request
@@ -58,14 +56,6 @@ app.register_error_handler(ExceptionBase, handle_exception_base)
 app.register_error_handler(Exception, handle_unexpected_error)
 
 routes = {
-    "run_record_validation": {
-        "function": run_record_validation,
-        "arguments": ["env", "config_path", "endpoint", "include_data"],
-    },
-    "run_data_validation": {
-        "function": run_data_validation,
-        "arguments": ["env", "config_path", "include_data"],
-    },
     "run": {
         "function": run_service,
         "arguments": ["env", "config_path", "include_data"],
@@ -133,7 +123,7 @@ def run_service():
 if __name__ == "__main__":
     sc = (
         ServerConfig()
-    )  # potentially pass in vars / customize configuration if using from python directly
+    ) 
     parser = argparse.ArgumentParser(description="Process the port.")
     parser.add_argument(
         "--port",

@@ -1,6 +1,6 @@
 # Setup and Deployment Steps
 ## Required Env Variables
-To run the server, these env variables needs to be set.
+To run the server, these env variables needs to be set. Please save a .env in the root directory. If you are building a docker container, please save a .env in the ./build/ directory as well.
 <details>
     <summary>.env file sample</summary>
     <figure class="highlight">
@@ -70,18 +70,6 @@ To run server locally, you will need to clone the github repository to your comp
 pip3 install itsdangerous==2.0.1
 pip3 install -r requirements.txt
 ```
-2. Install Node.js v16.x and npm. Here is how to do this using [NVM](https://github.com/nvm-sh/nvm), but other methods work as well so long as the two are installed. Use these commands to install NVM and select Node 16:
-```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-nvm use 16
-```
-3. Install the n package globally using npm and use it to install the stable version of Node.js. Also, install the newman package globally:
-```
-npm cache clean -f
-npm install -g n
-n stable
-npm install -g newman
-```
 4. You can now run the service via CLI by entering the service command. You can find examples of the CLI command in `example.sh` file
 5. You can also start the server manually in your terminal to make API request to get the analytics or validation results. You can do so by running the following command:
 ```
@@ -104,17 +92,8 @@ To build the docker container
 ```
 ./docker/run.sh
 ```
-4. To use the Docker CLI
-```
-./docker/connect.sh
-```
-5. After connecting to the docker CLI, you can run the server to access the API by doing: `python3 run_server.py`
-6. Or you can call the services via CLI, you can find examples cmd in the `example.sh` file
 
-### Docker Issues
-1. The first time you run the docker container it may fail, go into docker, stop the container and rerun the command.
-2. If you get an issue with docker where on running the container the container is failed to be removed, its because it is most likely runing, power the container down and try again.
-3. The container starts with the run_server.py already running, to run it manualy, use `top` to see what process number it has and then run `kill n` where n is the process number of Python3.
+
 
 ## Deployment steps to GCP
 The repository has Github Actions that are setup to deploy to GCP when code is pushed into a `staging` or `main` branch. The Github Actions will also push a new image to Docker Hub when new code is pushed into a `main` branch.
