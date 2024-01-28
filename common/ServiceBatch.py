@@ -35,7 +35,7 @@ class ServiceBatch(ServiceBase):
                 if time.time() > time_end:
                     
                     break
-            print("Finished " + str(len(results)))
+            return {"data": results}
         except:
             import traceback as tb
             tb.print_exc()
