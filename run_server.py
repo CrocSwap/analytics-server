@@ -62,6 +62,9 @@ routes = {
     },
 }
 
+@app.route("/", methods=["GET"])
+def ping_alive():
+    return "OK", 200
 
 @app.route("/analytics/run", methods=["POST", "GET"])
 def run_service():
