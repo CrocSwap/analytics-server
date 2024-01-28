@@ -63,7 +63,7 @@ routes = {
 }
 
 
-@app.route("/run", methods=["POST", "GET"])
+@app.route("/analytics/run", methods=["POST", "GET"])
 def run_service():
     try:
         # Initialize an empty dictionary
