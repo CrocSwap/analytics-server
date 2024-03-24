@@ -1,10 +1,10 @@
 {
 	"id": "8c8f573e-edb1-4236-b620-d890fb2d3470",
-	"name": "Görli JG AWS EC2",
+	"name": "Sepolia JG AWS EC2",
 	"values": [
 		{
 			"key": "chainId",
-			"value": "0x5",
+			"value": "0xaa36a7",
 			"type": "default",
 			"enabled": true
 		},

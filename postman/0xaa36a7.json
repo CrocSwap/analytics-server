@@ -1,34 +1,34 @@
 {
 	"id": "480360ec-fedc-42ab-a4c5-8ad6edce7a5f",
-	"name": "Görli on ambindexer.net",
+	"name": "Sepolia on perseus",
 	"values": [
 		{
 			"key": "chainId",
-			"value": "0x5",
+			"value": "0xaa36a7",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "dai",
-			"value": "0xdc31Ee1784292379Fbb2964b3B9C4124D8F89C60",
+			"value": "0x81038eE77D89d0D131a12eeB8dc7b1aaeB3dB77F",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "usdc",
-			"value": "0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C",
+			"value": "0xca358d854cA11a00cB1CF659468c026674eD250c",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "account_1",
-			"value": "{{CHAIN_0X5_ACCOUNT_1}}",
+			"value": "{{CHAIN_0xaa36a7_ACCOUNT_1}}",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "account_2",
-			"value": "{{CHAIN_0X5_ACCOUNT_2}}",
+			"value": "{{CHAIN_0xaa36a7_ACCOUNT_2}}",
 			"type": "default",
 			"enabled": true
 		},
@@ -130,7 +130,7 @@
 		},
 		{
 			"key": "GCGO_POOL_STATS",
-			"value": "https://ambindexer.net/gcgo/pool_stats",
+			"value": "http://51.81.56.123/gcgo/pool_stats",
 			"type": "default",
 			"enabled": true
 		},
@@ -142,7 +142,7 @@
 		},
 		{
 			"key": "network_id",
-			"value": "goerli",
+			"value": "sepolia",
 			"type": "default",
 			"enabled": true
 		},
