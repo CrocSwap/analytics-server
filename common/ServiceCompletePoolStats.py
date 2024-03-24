@@ -10,7 +10,7 @@ from .ServiceFactory import ServiceFactory
 service_get_pool_by_id_subgraph = ServiceConfig(
     {
         "chain_id": "0x1",
-        "supported_chain_ids": ["0x1", "0x5"],
+        "supported_chain_ids": ["0x1", "0xaa36a7"],
         "results": {
             "value": {
                 "cache": {

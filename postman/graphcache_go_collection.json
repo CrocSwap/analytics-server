@@ -103,7 +103,7 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_stats?base=0x0000000000000000000000000000000000000000&quote=0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C&poolIdx=36000&chainId=0x5",
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_stats?base=0x0000000000000000000000000000000000000000&quote=0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C&poolIdx=36000&chainId=0xaa36a7",
                     "protocol": "{{protocol}}",
                     "host": [
                         "{{cacheDomain}}"
@@ -290,7 +290,7 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_positions?base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000&chainId=0x5&annotate=true&ensResolution=true&omitEmpty=true&omitKnockout=true&addValue=true&n=50",
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_positions?base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000&chainId=0xaa36a7&annotate=true&ensResolution=true&omitEmpty=true&omitKnockout=true&addValue=true&n=50",
                     "protocol": "{{protocol}}",
                     "host": [
                         "{{cacheDomain}}"
@@ -351,7 +351,7 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_position_apy_leaders?base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000&chainId=0x5&ensResolution=true&omitEmpty=true&omitKnockout=true&addValue=true&sortByAPY=true&n=50&minPosAge=86400",
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_position_apy_leaders?base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000&chainId=0xaa36a7&ensResolution=true&omitEmpty=true&omitKnockout=true&addValue=true&sortByAPY=true&n=50&minPosAge=86400",
                     "protocol": "{{protocol}}",
                     "host": [
                         "{{cacheDomain}}"
@@ -416,7 +416,7 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_liq_curve?chainId=0x5&base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000",
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/pool_liq_curve?chainId=0xaa36a7&base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000",
                     "protocol": "{{protocol}}",
                     "host": [
                         "{{cacheDomain}}"
@@ -453,7 +453,7 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_txs?user=0xE09de95d2A8A73aA4bFa6f118Cd1dcb3c64910Dc&chainId=0x5&annotate=true&addValue=true&simpleCalc=true&annotateMEV=false&ensResolution=true&n=100",
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_txs?user=0xE09de95d2A8A73aA4bFa6f118Cd1dcb3c64910Dc&chainId=0xaa36a7&annotate=true&addValue=true&simpleCalc=true&annotateMEV=false&ensResolution=true&n=100",
                     "protocol": "{{protocol}}",
                     "host": [
                         "{{cacheDomain}}"
@@ -506,7 +506,7 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_limit_orders?user=0xa86dabFBb529a4C8186BdD52bd226aC81757E090&chainId=0x5&ensResolution=true",
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_limit_orders?user=0xa86dabFBb529a4C8186BdD52bd226aC81757E090&chainId=0xaa36a7&ensResolution=true",
                     "protocol": "{{protocol}}",
                     "host": [
                         "{{cacheDomain}}"
@@ -544,7 +544,7 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_pool_limit_orders?user=0xa86dabFBb529a4C8186BdD52bd226aC81757E090&chainId=0x5&base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000",
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_pool_limit_orders?user=0xa86dabFBb529a4C8186BdD52bd226aC81757E090&chainId=0xaa36a7&base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000",
                     "protocol": "{{protocol}}",
                     "host": [
                         "{{cacheDomain}}"
@@ -610,7 +610,7 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_positions?user=0xa86dabFBb529a4C8186BdD52bd226aC81757E090&chainId=0x5&ensResolution=true&annotate=true&omitEmpty=true&omitKnockout=true&addValue=true",
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_positions?user=0xa86dabFBb529a4C8186BdD52bd226aC81757E090&chainId=0xaa36a7&ensResolution=true&annotate=true&omitEmpty=true&omitKnockout=true&addValue=true",
                     "protocol": "{{protocol}}",
                     "host": [
                         "{{cacheDomain}}"
@@ -659,7 +659,7 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_pool_positions?user=0xa86dabFBb529a4C8186BdD52bd226aC81757E090&chainId=0x5&base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000",
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_pool_positions?user=0xa86dabFBb529a4C8186BdD52bd226aC81757E090&chainId=0xaa36a7&base=0x0000000000000000000000000000000000000000&quote=0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c&poolIdx=36000",
                     "protocol": "{{protocol}}",
                     "host": [
                         "{{cacheDomain}}"
@@ -725,7 +725,7 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_balance_tokens?chainId=0x5&user=0xE09de95d2A8A73aA4bFa6f118Cd1dcb3c64910Dc",
+                    "raw": "{{protocol}}://{{cacheDomain}}/gcgo/user_balance_tokens?chainId=0xaa36a7&user=0xE09de95d2A8A73aA4bFa6f118Cd1dcb3c64910Dc",
                     "protocol": "{{protocol}}",
                     "host": [
                         "{{cacheDomain}}"
